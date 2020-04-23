@@ -5,7 +5,11 @@
       <i class="iconfont icon-fabu"></i>
     </view>
     <view class="search-container">
-      <x-search iconfont="iconfont" icon-sousuo="icon-sousuo" bind:search="onSearch" />
+      <x-search 
+      iconfont="iconfont" 
+      icon-sousuo="icon-sousuo" 
+      bind:search="onSearch" 
+      />
     </view>
   </view>
 
@@ -13,15 +17,27 @@
   <view class="blog-list">
     <block wx:for="{{blogList}}" wx:key="_id">
       <view class="blog-panel">
-        <x-blog-card blog="{{item}}" data-blogid="{{item._id}}" bind:tap="goComment" />
-        <x-blog-ctrl blogId="{{item._id}}" blog="{{item}}" iconfont="iconfont" icon-pinglun="icon-pinglun" icon-fenxiang="icon-fenxiang" />
+        <x-blog-card 
+        blog="{{item}}" 
+        data-blogid="{{item._id}}" 
+        bind:tap="goComment" />
+        <x-blog-ctrl 
+        blogId="{{item._id}}" 
+        blog="{{item}}" 
+        iconfont="iconfont" 
+        icon-pinglun="icon-pinglun" 
+        icon-fenxiang="icon-fenxiang" 
+        />
       </view>
     </block>
   </view>
 
 
   <!-- 底部弹出层 -->
-  <x-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail">
-
+  <x-login 
+  modalShow="{{modalShow}}" 
+  bind:loginsuccess="onLoginSuccess" 
+  bind:loginfail="onLoginFail"
+  >
   </x-login>
 </view>

@@ -1,8 +1,24 @@
-<scroll-view hidden="{{isLyricShow}}" class="lyric-scroll" scroll-y scroll-top="{{scrollTop}}" scroll-with-animation="true">
+<scroll-view 
+hidden="{{isLyricShow}}" 
+class="lyric-scroll" 
+scroll-y 
+scroll-top="{{scrollTop}}" 
+scroll-with-animation="true"
+>
   <view class="lyric-panel">
-    <block wx:for="{{lrcList}}" wx:key="item">
-      <view class="lyric {{index==nowLyricIndex?'hightlight-lyric': ''}}">{{item.lrc}}</view>
+    <block 
+    wx:for="{{lrcList}}" 
+    wx:key="item"
+    >
+      <view 
+      class="lyric {{index==nowLyricIndex?'hightlight-lyric': ''}}">
+      
+      {{item.lrc}}</view>
     </block>
   </view>
 
 </scroll-view>
+<!-- scroll-view 可滚动视图区域。使用竖向滚动时，需要给scroll-view一个固定高度，通过 WXSS 设置 height
+scroll-y 允许纵向滚动
+scroll-top 设置竖向滚动条位置
+scroll-with-animation  在设置滚动条位置时使用动画过渡 -->

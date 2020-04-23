@@ -1,6 +1,9 @@
 <view class="blog">
   <view class="blog-title">
-    <image class="blog-portrait" src="{{blog.avatarUrl}}"></image>
+    <image 
+    class="blog-portrait" 
+    src="{{blog.avatarUrl}}"
+    ></image>
     <view class="blog-box">
       <view class="blog-nickName">{{blog.nickName}}</view>
       <view class="blog-time">{{_createTime}}</view>
@@ -9,7 +12,18 @@
   <view class="blog-content">{{blog.content}}</view>
   <view class="blog-img">
     <block wx:for="{{blog.img}}" wx:key="*this">
-      <image class="img" src="{{item}}" mode="aspectFill" catch:tap="onPreviewImage" data-imgsrc="{{item}}" data-imgs="{{blog.img}}"></image>
+      <image 
+      class="img" 
+      src="{{item}}" 
+      mode="aspectFill" 
+      catch:tap="onPreviewImage" 
+      data-imgsrc="{{item}}" 
+      data-imgs="{{blog.img}}"
+      ></image>
     </block>
   </view>
 </view>
+<!-- mode="aspectFill"缩放模式，保持纵横比缩放图片，
+只保证图片的短边能完全显示出来。也就是说，
+图片通常只在水平或垂直方向是完整的，
+另一个方向将会发生截取。 -->

@@ -6,3 +6,6 @@
     >获取微信授权信息</button>
   </view>
 </x-bottom-modal>
+
+<!-- open-type='"getUserInfo'  获取用户信息，可以从bindgetuserinfo回调中获取到用户信息
+bindgetuserinfo="onGotUserInfo" -->

@@ -4,7 +4,7 @@ const rp = require('request-promise')
 const TcbRouter = require('tcb-router')
 
 
-const BASE_URL = 'http://www.icci.top'
+const BASE_URL = 'https://music.icci.top'
 cloud.init()
 
 // 云函数入口函数  歌单查询云函数  
@@ -48,6 +48,12 @@ event 包含了调用端（小程序端）调用该函数时传过来的参数�
   app.router('lyric', async(ctx, next) => {
     ctx.body = await rp(BASE_URL + `/lyric?id=${event.musicId}`).then((res) => {
       return res
+    })
+  })
+
+  app.router('swiper',async(ctx,next) => {
+    ctx.body = await rp(BASE_URL + '/banner?type=1').then((res) => {
+      return JSON.parse(res)
     })
   })
 

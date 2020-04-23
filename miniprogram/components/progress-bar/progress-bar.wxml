@@ -1,14 +1,40 @@
 <view class="container">
   <text class="time">{{showTime.currentTime}}</text>
   <view class="control">
-    <movable-area class="movable-area"> 
-      <movable-view direction="horizontal" class="movable-view"
-        damping="1000" x="{{movableDis}}" bindchange="onChange"
-        bindtouchend="onTouchEnd"
+    <movable-area 
+    class="movable-area"
+    > 
+      <movable-view 
+      direction="horizontal" 
+      class="movable-view"
+      damping="1000" 
+      x="{{movableDis}}" 
+      bindchange="onChange"
+      bindtouchend="onTouchEnd"
       />
     </movable-area>
-    <progress stroke-width="4" backgroundColor="#969696"
-    activeColor="#fff" percent="{{progress}}"></progress>
+    <progress 
+    stroke-width="4" 
+    backgroundColor="#969696"
+    activeColor="#fff" 
+    percent="{{progress}}"
+    ></progress>
   </view>
   <text class="time">{{showTime.totalTime}}</text>
 </view>
+<!-- movable-area  是movable-view的可移动区域。
+movable-view区域小于movable-area
+1tip: movable-area 必须设置width和height属性，不设置默认为10px**
+2tip: 当movable-view小于movable-area时，movable-view的移动范围是在movable-area内；
+3tip: 当movable-view大于movable-area时，movable-view的移动范围必须包含movable-area
+（x轴方向和y轴方向分开考虑） -->
+<!-- movable-view
+ direction movable-view的移动方向，属性值有all、vertical、horizontal、none
+ damping 阻尼系数，用于控制x或y改变时的动画和过界回弹的动画，值越大移动越快
+ bindchange 拖动过程中触发的事件，event.detail = {x, y, source}
+  bindtouchend 触发结束出发点事件 -->
+<!-- progress
+ stroke-width 进度条线的宽度
+ backgroundColor 未选择的进度条的颜色
+ activeColor 已选择的进度条的颜色
+ percent 百分比0~100 -->

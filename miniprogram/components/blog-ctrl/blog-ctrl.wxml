@@ -4,19 +4,33 @@
     <text>评论</text>
   </view>
   <view class="ctrl-item share">
-    <button open-type="share" data-blogid="{{blogId}}" data-blog="{{blog}}" class="share-btn" hover-class="share-hover">
+    <button 
+    open-type="share" 
+    data-blogid="{{blogId}}" 
+    data-blog="{{blog}}" 
+    class="share-btn" 
+    hover-class="share-hover">
       <i class="iconfont icon-fenxiang icon"></i>
       <text>分享</text>
     </button>
   </view>
 </view>
-
-
-<x-login modalShow="{{loginShow}}" bind:loginsuccess="onLoginsuccess" bind:loginfail="onLoginfail" />
-
-<x-bottom-modal modalShow="{{modalShow}}">
+<x-login 
+modalShow="{{loginShow}}" 
+bind:loginsuccess="onLoginsuccess" 
+bind:loginfail="onLoginfail" 
+/>
+<x-bottom-modal 
+modalShow="{{modalShow}}"
+>
   <form slot="modal-content" report-submit="true" bind:submit="onSend">
     <textarea name="content" class="comment-content" placeholder="写评论" value="{{content}}" fixed="true"></textarea>
     <button size="mini" class="send" form-type="submit">发送</button>
   </form>
 </x-bottom-modal>
+<!-- form-type="submit" 是 button提交表单 的开放能力
+  用于 form 组件，点击分别会触发 form 组件的 submit/reset 事件 -->
+
+  <!-- button 的open-type='share'是 触发用户转发 -->
+  <!-- hover-class 指定按钮按下去的样式类。当 hover-class="none" 时，没有点击态效果 -->
+  <!-- report-submit 是否返回 formId 用于发送模板消息 -->

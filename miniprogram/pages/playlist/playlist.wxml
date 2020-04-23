@@ -2,7 +2,7 @@
   <block wx:for="{{background}}" wx:key="index">
     <swiper-item>
       <view class="swiper-item">
-        <image mode="widthFix" src="{{ item.url }}"></image>
+        <image mode="widthFix" src="{{ item.pic }}"></image>
       </view>
     </swiper-item>
   </block>

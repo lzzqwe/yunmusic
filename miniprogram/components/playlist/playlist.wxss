@@ -1,10 +1,11 @@
 /* components/playlist/playlist.wxss */
 .song-list {
-  width: 220rpx;
+  width: 240rpx;
   position: relative;
+  padding-bottom: 5px;
 }
 .song-img {
-  height: 220rpx;
+  height: 240rpx;
   width: 100%;
   border-radius:6rpx; 
 }
